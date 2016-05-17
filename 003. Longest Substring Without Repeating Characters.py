@@ -22,14 +22,11 @@ class Solution(object):
         _dict = {}
         max_len = 0
         start = 0
-        end = 0
 
         for pos, item in enumerate(s):
-            if item not in _dict:
-                _dict[item] = pos
-            else:
-                start = max(_dict[item] + 1, start)
-                _dict[item] = pos
-            end = pos
-            max_len = max(max_len, end-start+1)
+            if item in _dict:
+                start = max(start, _dict[item]+1)
+            _dict[item] = pos
+
+            max_len = max(max_len, pos-start+1)
         return max_len

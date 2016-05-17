@@ -14,10 +14,8 @@ class Solution(object):
     def climb(self, n):
         if n <= 0:
             return 0
-        elif n == 1:
-            return 1
-        elif n == 2:
-            return 2
+        elif n <= 3:
+            return n
         self.total = self.climb(n-1) + self.climb(n-2)
         return self.total
 
@@ -30,10 +28,10 @@ class Solution(object):
         # return self.climb(n)
         if n <= 0:
             return 0
-        if n == 1:
-            return 1
-        count = 2
-        value = [1, 2]
+        elif n <= 3:
+            return n
+        count = 3
+        value = [2, 3]
         while count < n:
             value = [value[1], value[0]+value[1]]
             count += 1

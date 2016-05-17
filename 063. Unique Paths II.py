@@ -77,5 +77,6 @@ s_ = [
   [0,1,0],
   [0,0,0]
 ]
-print Solution().uniquePathsWithObstacles(s_)
+s__ = [[0]]
+print Solution().uniquePathsWithObstacles(s__)
 
